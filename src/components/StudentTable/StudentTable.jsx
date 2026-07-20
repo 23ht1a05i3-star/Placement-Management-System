@@ -1,41 +1,105 @@
-function StudentTable({ students }) {
-  return (
-    <div>
-      <h2>Student Details</h2>
+import { Link } from "react-router-dom";
+import {
+  FaEye,
+  FaEdit,
+  FaTrash,
+} from "react-icons/fa";
+import "./StudentTable.css";
 
-      <table border="1" cellPadding="10">
+function StudentTable({ students, deleteStudent }) {
+
+  if (students.length === 0) {
+    return (
+      <div className="no-student">
+        <h2>No Students Registered</h2>
+        <p>Click "Add Student" to register a new student.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="table-container">
+
+      <table className="student-table">
+
         <thead>
+
           <tr>
-            <th>S.No</th>
+            <th>ID</th>
             <th>Name</th>
-            <th>Password</th>
+            <th>Roll No</th>
             <th>Email</th>
-            <th>Phone</th>
             <th>Branch</th>
             <th>CGPA</th>
+            <th>Year</th>
+            <th>Actions</th>
           </tr>
+
         </thead>
 
         <tbody>
-          {students.length > 0 ? (
-            students.map((student, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{student.studentName}</td>
-                <td>{student.password}</td>
-                <td>{student.email}</td>
-                <td>{student.phone}</td>
-                <td>{student.branch}</td>
-                <td>{student.CGPA}</td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="7">No Student Data Available</td>
+
+          {students.map((student, index) => (
+
+            <tr key={student.id}>
+
+              <td>{index + 1}</td>
+
+              <td>{student.studentName}</td>
+
+              <td>{student.rollNo}</td>
+
+              <td>{student.email}</td>
+
+              <td>{student.branch}</td>
+
+              <td>{student.cgpa}</td>
+
+              <td>{student.year}</td>
+
+              <td>
+
+                <div className="action-buttons">
+
+                  <Link to={`/Students/${student.id}`}>
+                    <button className="view-btn">
+                      <FaEye /> View
+                    </button>
+                  </Link>
+
+                  <Link to={`/EditStudent/${student.id}`}>
+                    <button className="edit-btn">
+                      <FaEdit /> Edit
+                    </button>
+                  </Link>
+
+                  <button
+                    className="delete-btn"
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Delete this student?"
+                        )
+                      ) {
+                        deleteStudent(student.id);
+                      }
+                    }}
+                  >
+                    <FaTrash /> Delete
+                  </button>
+
+                </div>
+
+              </td>
+
             </tr>
-          )}
+
+          ))}
+
         </tbody>
+
       </table>
+
     </div>
   );
 }
