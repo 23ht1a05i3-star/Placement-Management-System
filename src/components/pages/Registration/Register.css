@@ -1,0 +1,126 @@
+.register-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f7fc;
+    padding:40px;
+}
+
+.register-card{
+    width:700px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    padding:35px;
+}
+
+.register-card h1{
+    text-align:center;
+    color:#0f3d91;
+    margin-bottom:30px;
+}
+
+.register-card form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.register-card input,
+.register-card select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.register-card input:focus,
+.register-card select:focus{
+    border-color:#0f3d91;
+    box-shadow:0 0 5px rgba(15,61,145,.3);
+}
+
+.register-card span{
+    grid-column:span 2;
+    color:red;
+    font-size:13px;
+    margin-top:-12px;
+}
+
+.btn-group{
+    grid-column:span 2;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+}
+
+.btn-group button{
+    width:180px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    font-size:16px;
+    transition:.3s;
+}
+
+.btn-group button:first-child{
+    background:#0f3d91;
+}
+
+.btn-group button:first-child:hover{
+    background:#1d4ed8;
+}
+
+.btn-group button:last-child{
+    background:#dc3545;
+}
+
+.btn-group button:last-child:hover{
+    background:#b02a37;
+}
+
+.login-link{
+    grid-column:span 2;
+    text-align:center;
+    margin-top:20px;
+}
+
+.login-link a{
+    text-decoration:none;
+    color:#0f3d91;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.register-card{
+    width:100%;
+}
+
+.register-card form{
+    grid-template-columns:1fr;
+}
+
+.register-card span,
+.btn-group,
+.login-link{
+    grid-column:span 1;
+}
+
+.btn-group{
+    flex-direction:column;
+}
+
+.btn-group button{
+    width:100%;
+}
+
+}

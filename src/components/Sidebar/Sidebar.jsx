@@ -1,61 +1,79 @@
-import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import { NavLink } from "react-router-dom";
+import {
+  FaHome,
+  FaTachometerAlt,
+  FaUserGraduate,
+  FaBuilding,
+  FaChartBar,
+  FaCog,
+  FaSignOutAlt
+} from "react-icons/fa";
 
 function Sidebar() {
   return (
     <div className="sidebar">
+
+      <div className="sidebar-header">
+        <h2>PMS</h2>
+        <p>Placement Portal</p>
+      </div>
+
       <ul>
 
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Dashboard</li>
-        </NavLink>
+        <li>
+          <NavLink to="/Home">
+            <FaHome />
+            <span>Home</span>
+          </NavLink>
+        </li>
 
-        <NavLink
-          to="/students"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Students</li>
-        </NavLink>
+        <li>
+          <NavLink to="/Dashboard">
+            <FaTachometerAlt />
+            <span>Dashboard</span>
+          </NavLink>
+        </li>
 
-        <NavLink
-          to="/companies"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Companies</li>
-        </NavLink>
+        <li>
+          <NavLink to="/Students">
+            <FaUserGraduate />
+            <span>Students</span>
+          </NavLink>
+        </li>
 
-        <NavLink
-          to="/placements"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Placements</li>
-        </NavLink>
+        <li>
+          <NavLink to="/Companies">
+            <FaBuilding />
+            <span>Companies</span>
+          </NavLink>
+        </li>
 
-        <NavLink
-          to="/reports"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Reports</li>
-        </NavLink>
+        <li>
+          <NavLink to="/Reports">
+            <FaChartBar />
+            <span>Reports</span>
+          </NavLink>
+        </li>
 
-        <NavLink
-          to="/settings"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Settings</li>
-        </NavLink>
-
-        <NavLink
-          to="/login"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          <li>Logout</li>
-        </NavLink>
+        <li>
+          <NavLink to="/Settings">
+            <FaCog />
+            <span>Settings</span>
+          </NavLink>
+        </li>
 
       </ul>
+
+      <div className="logout">
+
+        <NavLink to="/Login">
+          <FaSignOutAlt />
+          <span>Logout</span>
+        </NavLink>
+
+      </div>
+
     </div>
   );
 }
