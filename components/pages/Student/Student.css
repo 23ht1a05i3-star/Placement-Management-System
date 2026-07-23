@@ -1,0 +1,117 @@
+.students-page{
+
+    width:100%;
+
+}
+
+.students-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.students-header h1{
+
+    color:#0f3d91;
+
+    font-size:32px;
+
+}
+
+.students-header p{
+
+    color:#666;
+
+    margin-top:5px;
+
+}
+
+.add-btn{
+
+    background:#0f3d91;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    background:#174fb8;
+
+}
+
+.search-container{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+
+}
+
+.search-container input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
+.search-container input:focus{
+
+    outline:none;
+
+    border:1px solid #0f3d91;
+
+}
+
+@media(max-width:768px){
+
+.students-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.add-btn{
+
+width:100%;
+
+}
+
+}
